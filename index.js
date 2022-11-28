@@ -11,41 +11,45 @@ function submitHandler(){
     var ip = initialPrice.value;
     var qty = stocksQuantity.value;
     var curr = currentPrice.value;
-
-    calculateProfitAndLoss(ip, qty,curr)
+     
+    if(ip ==''|| qty =='' || curr ==''){
+        showOutput("Enter valid input");
+    }else{
+        calculateProfitAndLoss(ip, qty,curr)
+    }
+    
 }
 
 //ex-05
 function calculateProfitAndLoss(initial, quantity, current){
-    if(initial> current){
-        var loss = (initial - current) * quantity;
-        var lossPercentage = (loss / initial) *100;
 
-        showOutput('Hey , the loss is: ' +  loss ,'and the loss percentage is:' + lossPercentage ,'%');
+    var profit;
+    var profitPercentage;
+    var loss;
+    var lossPercentage;
+    var costprice=initial * quantity;
+    var sellingprice=current * quantity;
+
+    if(costprice> sellingprice){
+        loss = costprice - sellingprice;
+        lossPercentage = (loss/costprice)*100;
+
+        showOutput("Loss is:  "+loss+" and the Loss Percentge: "+lossPercentage+"%");
+        //console.log("Loss is:  "+loss+" and the Loss Percentge: "+lossPercentage+"%");
+        
     }else if(current> initial) {
-            var profit = (current - initial) * quantity;
-            var profitPercentage = (profit / initial) *100;
+             profit = sellingprice-costprice;
+             profitPercentage = (profit/costprice) * 100;
     
-            showOutput('Hey , the profit is: ' +  profit ,'and the profit percentage is:' + profitPercentage ,'%');
-        } else{
+            showOutput("Profit is:  "+profit+" and the Profit Percentge: "+profitPercentage+"%");
+
+        } else if(costprice == sellingprice){
             showOutput("No Pain No Gain");
         } 
 }
 
-// calculateProfitAndLoss(100,10,10);
-// calculateProfitAndLoss(20,10,100);
-// calculateProfitAndLoss(100,20,1000);
 
 function showOutput(message){
-    // switch (status) {
-    //     case "profit":
-    //         ouputBox.innerHTML = message;
-            
-    //         break;
-    
-    //     default:
-    //         break;
-    // }
     ouputBox.innerHTML = message;
 }
 

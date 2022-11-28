@@ -60,7 +60,7 @@ button{
     border: none;
 }
 
-.footer{
+/* .footer{
     
     background-color: gray;
     padding: 0.5rem;
@@ -71,23 +71,8 @@ button{
     position: fixed;
     bottom: 0px;
     font-size: larger;
-}
-
-/* .footer .footer-header{
-    font-weight: bold;
-    font-size: larger;
-}
-
-ul{
-    list-style-type: none;
-    display: inline;
-}
-
-.footer .link{
-    color: white;
-    text-decoration: none;
-    display: inline;
-    list-style: none; 
-    text-align: center;
 } */
-
+#output{
+    
+font-size: 2rem;
+}
