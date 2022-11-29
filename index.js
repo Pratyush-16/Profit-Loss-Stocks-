@@ -35,6 +35,7 @@ function calculateProfitAndLoss(initial, quantity, current){
         lossPercentage = (loss/costprice)*100;
 
         showOutput("Loss is:  "+loss+" and the Loss Percentge: "+lossPercentage+"%");
+        showOutput.style.color = '#green'
         //console.log("Loss is:  "+loss+" and the Loss Percentge: "+lossPercentage+"%");
         
     }else if(current> initial) {
