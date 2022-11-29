@@ -12,7 +12,7 @@ function submitHandler(){
     var qty = stocksQuantity.value;
     var curr = currentPrice.value;
      
-    if(ip ==''|| qty =='' || curr ==''){
+    if(ip ==''|| qty =='' || curr =='' || ip <=0 || qty <=0 || curr<=0){
         showOutput("Enter valid input");
     }else{
         calculateProfitAndLoss(ip, qty,curr)
